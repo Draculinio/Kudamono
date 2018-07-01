@@ -36,6 +36,8 @@ def flow():
     my_json = {"url": "https://github.com/Draculinio/Kudamono"}
     response = requests.request("POST",url+"/"+session+"/url",data=json.dumps(my_json).encode('utf8'))
     print(response.text)
+    #Close browser
+    response = requests.request("DELETE", url + "/" + session+"/window")
     #Session destruction
     response = requests.request("DELETE",url+"/"+session)
     print(response.text)
