@@ -3,6 +3,8 @@
 I changed my approach, more than threading I am using subrocesses. The next problem that appeared is that the chromedriver is not closed
 when the program ended, so I had to see how to close subprocesses. DONE.
 
+Added a navigation function to my sandbox.
+
 06/30/2018
 
 Starting to work on my webdriver class, my biggest challenge now is to be able to run the driver on a thread and continue the operations
