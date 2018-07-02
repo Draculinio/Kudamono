@@ -1,3 +1,8 @@
+07/01/2018
+
+I created a close browser in my sandbox, now it is time to start working on my webdriver class.
+Also I think it is time to establish some code conventions, because maybe in the future collaborators could be taken.
+
 06/30/2018 - 2
 
 I changed my approach, more than threading I am using subrocesses. The next problem that appeared is that the chromedriver is not closed
