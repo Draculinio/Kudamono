@@ -16,11 +16,9 @@ class webDriver():
         
     def navigate(self,url):
         try:
-            my_json = {"url": "https://www.google.com"}
+            my_json = {"url": url}
             navigation_url = self.url+"session/"+self.session+"/url"
-            print("Pointing to: "+navigation_url)
             response = requests.request("POST", navigation_url, data=json.dumps(my_json).encode('utf8'))
-            print(response.text)
         except:
             print("Something went wrong on navigation")
             self.end_session(self.session)
@@ -28,6 +26,11 @@ class webDriver():
     def close_browser(self):
         close_url = self.url+"session/"+self.session+"/window"
         requests.request("DELETE", close_url)
+
+    def max_browser(self):
+        max_url = self.url+"session/"+self.session+"/window/maximize"
+        my_json = {'value':'maximize'}
+        response = requests.request("POST",max_url,data=json.dumps(my_json).encode('utf-8'))
 
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
 

@@ -1,3 +1,7 @@
+07/02/2018
+
+At least I could call methods from my webdriver to open, navigate and close browser.
+
 07/01/2018
 
 I created a close browser in my sandbox, now it is time to start working on my webdriver class.
