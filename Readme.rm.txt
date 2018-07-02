@@ -1,3 +1,7 @@
+07/02/2018 - 2
+
+Made methods for maximize, minimize and full screen for the browser. I think that I need to start documenting code.
+
 07/02/2018
 
 At least I could call methods from my webdriver to open, navigate and close browser.

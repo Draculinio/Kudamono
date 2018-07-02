@@ -32,6 +32,16 @@ class webDriver():
         my_json = {'value':'maximize'}
         response = requests.request("POST",max_url,data=json.dumps(my_json).encode('utf-8'))
 
+    def min_browser(self):
+        min_url = self.url + "session/" + self.session + "/window/minimize"
+        my_json = {'value': 'minimize'}
+        response = requests.request("POST", min_url, data=json.dumps(my_json).encode('utf-8'))
+
+    def full_screen_browser(self):
+        fs_url = self.url + "session/" + self.session + "/window/fullscreen"
+        my_json = {'value': 'fullscreen'}
+        response = requests.request("POST", fs_url, data=json.dumps(my_json).encode('utf-8'))
+
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
 
     def open_server(self,server):
