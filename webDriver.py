@@ -1,6 +1,7 @@
 import requests
 import json
 import subprocess
+from sessionData import sessionData
 
 class webDriver():
     def __init__(self,browser):
@@ -15,21 +16,26 @@ class webDriver():
         
     def navigate(self,url):
         try:
-            my_json = {"url": url}
-            requests.request("POST", self.url + self.session + "/url", data=json.dumps(my_json).encode('utf8'))
+            my_json = {"url": "https://www.google.com"}
+            navigation_url = self.url+"session/"+self.session+"/url"
+            print("Pointing to: "+navigation_url)
+            response = requests.request("POST", navigation_url, data=json.dumps(my_json).encode('utf8'))
+            print(response.text)
         except:
             print("Something went wrong on navigation")
-            self.end_session(self.sessio)
+            self.end_session(self.session)
 
     def close_browser(self):
-        requests.request("DELETE", self.url + self.session + "/window")
+        close_url = self.url+"session/"+self.session+"/window"
+        requests.request("DELETE", close_url)
 
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
 
     def open_server(self,server):
         """Opens the server in a subroprcess. Which server will open depends on the browser you want to use."""
         if str.upper(server) == "CHROME":
-            self.process = subprocess.Popen("chromedriver.exe --verbose --port=9000")
+            #self.process = subprocess.Popen("chromedriver.exe --verbose --port=9000")
+            self.process = subprocess.Popen("chromedriver.exe --port=9000")
             return self.process #TODO: See if this is needed in the future
 
     def create_session(self):
@@ -43,11 +49,11 @@ class webDriver():
             }
         }
         try:
-            print("URL TO POINT: "+self.url)
-            #response = requests.request("POST", self.url+"/session", data=json.dumps(capabilities).encode('utf8'))
-            response = requests.post(self.url+"//session",json=[capabilities])
-            print("Response: "+response.text)
-            return response
+
+            session_url = self.url+"session"
+            response = requests.request("POST", session_url, data=json.dumps(capabilities).encode('utf8'))
+            #print("Response: "+response.text)
+            return json.loads(response.text)['sessionId']
         except:
             self.end_session()
 
@@ -57,4 +63,5 @@ class webDriver():
         requests.delete(self.url+"/session"+self.session)
 
     def end_driver(self):
+        print("Finishing webdriver server...")
         self.process.terminate()
