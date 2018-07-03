@@ -1,3 +1,8 @@
+07/03/2018
+
+Looking at what 'status' is for the webdriver. Right now I don't find any utility, but I will keep my get_status method, maybe
+in the future it will give me something good.
+
 07/02/2018 - 2
 
 Made methods for maximize, minimize and full screen for the browser. I think that I need to start documenting code.

@@ -42,6 +42,12 @@ class webDriver():
         my_json = {'value': 'fullscreen'}
         response = requests.request("POST", fs_url, data=json.dumps(my_json).encode('utf-8'))
 
+    def get_status(self):
+        status_url = self.url + "status"
+        response = requests.get(status_url)
+        print(response.text)
+        return response.text
+
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
 
     def open_server(self,server):
