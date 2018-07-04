@@ -1,7 +1,10 @@
-import requests
 import json
 import subprocess
-from sessionData import sessionData
+
+import requests
+
+
+#from sessionData import sessionData
 
 class webDriver():
     def __init__(self,browser):
@@ -45,13 +48,34 @@ class webDriver():
     def get_status(self):
         status_url = self.url + "status"
         response = requests.get(status_url)
+        print("--STATUS---------")
         print(response.text)
+        print("-----------------")
         return response.text
+
+    def locate_element(self,location_type,location_value):
+        """
+        Locates an element.
+        :param location_type: Type of location (id, name, etc)
+        :param location_value: the locator itself.
+        :return: the element.
+        :author: Pablo Soifer
+        """
+        element_url = self.url + "session/" + self.session + "/element"
+        my_json = {'using':location_type,'value':location_value}
+        response = requests.request("POST", element_url, data=json.dumps(my_json).encode('utf-8'))
+        print(json.loads(response.text)['value'])
+        return json.loads(response.text)['value']
 
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
 
     def open_server(self,server):
-        """Opens the server in a subroprcess. Which server will open depends on the browser you want to use."""
+        """
+        Opens the server in a subroprcess. Which server will open depends on the browser you want to use.
+        :param server: What kind of webdriver will be opened.
+        :return: the process.
+        :author: Pablo Soifer
+        """
         if str.upper(server) == "CHROME":
             #self.process = subprocess.Popen("chromedriver.exe --verbose --port=9000")
             self.process = subprocess.Popen("chromedriver.exe --port=9000")
