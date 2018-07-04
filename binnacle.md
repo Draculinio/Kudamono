@@ -1,3 +1,9 @@
+07/04/2018
+
+I had to change my Python version in my computer (upgraded to 3.7) because my old python changes the way I do imports.
+
+Added a simple send keys method.
+
 07/03/2018
 
 I can get web elements now. Next is to make something with them.

@@ -65,7 +65,19 @@ class webDriver():
         my_json = {'using':location_type,'value':location_value}
         response = requests.request("POST", element_url, data=json.dumps(my_json).encode('utf-8'))
         print(json.loads(response.text)['value'])
-        return json.loads(response.text)['value']
+        return json.loads(response.text)['value']['ELEMENT']
+
+    def write(self,element,text):
+        """
+        Writes something in a web element
+        :param element: The element where the text will be writen
+        :param text: The text that will go.
+        :return:
+        """
+        write_url = self.url + "session/" + self.session +"/element/"+element+"/value"
+        my_json = {'value': [text]}
+        response = requests.request("POST", write_url, data=json.dumps(my_json).encode('utf-8'))
+        print(response.text)
 
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
 
