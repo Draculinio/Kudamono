@@ -77,8 +77,17 @@ class webDriver():
         write_url = self.url + "session/" + self.session +"/element/"+element+"/value"
         my_json = {'value': [text]}
         response = requests.request("POST", write_url, data=json.dumps(my_json).encode('utf-8'))
-        print(response.text)
 
+    def click(self,element):
+        """
+        Clicks on an element
+        :param element: The element to be clicked
+        :return:
+        """
+        write_url = self.url + "session/" + self.session + "/element/" + element + "/click"
+        my_json = {'value': 'click'}
+        response = requests.request("POST", write_url, data=json.dumps(my_json).encode('utf-8'))
+        print(response.text)
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
 
     def open_server(self,server):
