@@ -7,9 +7,11 @@ import requests
 #from sessionData import sessionData
 
 class webDriver():
-    def __init__(self,browser):
+    def __init__(self,browser,port='9000'):
+        self.port=port
+        self.capabilites={}
         self.browser = browser
-        self.url = 'http://127.0.0.1:9000/'
+        self.url = 'http://127.0.0.1:'+self.port+"/"
         self.session=""
         self.process = ""
 
@@ -18,6 +20,11 @@ class webDriver():
         self.session = self.create_session()
         
     def navigate(self,url):
+        """
+        Navigates to a site
+        :param url: The url.
+        :return:
+        """
         try:
             my_json = {"url": url}
             navigation_url = self.url+"session/"+self.session+"/url"
@@ -98,8 +105,7 @@ class webDriver():
         :author: Pablo Soifer
         """
         if str.upper(server) == "CHROME":
-            #self.process = subprocess.Popen("chromedriver.exe --verbose --port=9000")
-            self.process = subprocess.Popen("chromedriver.exe --port=9000")
+            self.process = subprocess.Popen("chromedriver.exe --port="+self.port)
             return self.process #TODO: See if this is needed in the future
 
     def create_session(self):
@@ -123,7 +129,6 @@ class webDriver():
 
 
     def end_session(self):
-        #requests.request("DELETE",self.url+"/session"+self.session)
         requests.delete(self.url+"/session"+self.session)
 
     def end_driver(self):
