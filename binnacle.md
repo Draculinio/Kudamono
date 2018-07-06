@@ -1,3 +1,7 @@
+08/05/2018
+
+Now the webdriver server subprocess has his own class and it does not depend on the web driver anymore.
+
 07/05/2018
 
 Added a capabilities dictionary. It will be used to add capabilities to the browser.

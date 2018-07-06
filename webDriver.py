@@ -3,6 +3,7 @@ import subprocess
 
 import requests
 
+from serverManipulation import serverManipulation
 
 #from sessionData import sessionData
 
@@ -13,12 +14,13 @@ class webDriver():
         self.browser = browser
         self.url = 'http://127.0.0.1:'+self.port+"/"
         self.session=""
-        self.process = ""
+        self.server_manipulator = serverManipulation()
 
-    def start_browser(self):
-        self.open_server("chrome")
+    def start_browser(self, browser = "chrome"):
+
+        self.server_manipulator.open_server(browser,self.port)
         self.session = self.create_session()
-        
+
     def navigate(self,url):
         """
         Navigates to a site
@@ -36,6 +38,7 @@ class webDriver():
     def close_browser(self):
         close_url = self.url+"session/"+self.session+"/window"
         requests.request("DELETE", close_url)
+        self.server_manipulator.close_server()
 
     def max_browser(self):
         max_url = self.url+"session/"+self.session+"/window/maximize"
@@ -95,18 +98,10 @@ class webDriver():
         my_json = {'value': 'click'}
         response = requests.request("POST", write_url, data=json.dumps(my_json).encode('utf-8'))
         print(response.text)
+
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
 
-    def open_server(self,server):
-        """
-        Opens the server in a subroprcess. Which server will open depends on the browser you want to use.
-        :param server: What kind of webdriver will be opened.
-        :return: the process.
-        :author: Pablo Soifer
-        """
-        if str.upper(server) == "CHROME":
-            self.process = subprocess.Popen("chromedriver.exe --port="+self.port)
-            return self.process #TODO: See if this is needed in the future
+
 
     def create_session(self):
         capabilities = {
@@ -131,6 +126,3 @@ class webDriver():
     def end_session(self):
         requests.delete(self.url+"/session"+self.session)
 
-    def end_driver(self):
-        print("Finishing webdriver server...")
-        self.process.terminate()
