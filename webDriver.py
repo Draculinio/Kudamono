@@ -1,6 +1,4 @@
 import json
-import subprocess
-
 import requests
 
 from serverManipulation import serverManipulation
@@ -117,7 +115,6 @@ class webDriver():
 
             session_url = self.url+"session"
             response = requests.request("POST", session_url, data=json.dumps(capabilities).encode('utf8'))
-            #print("Response: "+response.text)
             return json.loads(response.text)['sessionId']
         except:
             self.end_session()
