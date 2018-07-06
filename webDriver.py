@@ -1,5 +1,6 @@
 import json
 import requests
+from keyConstants import *
 
 from serverManipulation import serverManipulation
 
@@ -72,8 +73,8 @@ class webDriver():
         element_url = self.url + "session/" + self.session + "/element"
         my_json = {'using':location_type,'value':location_value}
         response = requests.request("POST", element_url, data=json.dumps(my_json).encode('utf-8'))
-        print(json.loads(response.text)['value'])
         return json.loads(response.text)['value']['ELEMENT']
+
 
     def write(self,element,text):
         """
@@ -95,7 +96,7 @@ class webDriver():
         write_url = self.url + "session/" + self.session + "/element/" + element + "/click"
         my_json = {'value': 'click'}
         response = requests.request("POST", write_url, data=json.dumps(my_json).encode('utf-8'))
-        print(response.text)
+
 
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
 
