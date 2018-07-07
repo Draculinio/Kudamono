@@ -1,23 +1,31 @@
 import json
-import subprocess
-
 import requests
+from keyConstants import *
 
+from serverManipulation import serverManipulation
 
 #from sessionData import sessionData
 
 class webDriver():
-    def __init__(self,browser):
+    def __init__(self,browser,port='9000'):
+        self.port=port
+        self.capabilites={}
         self.browser = browser
-        self.url = 'http://127.0.0.1:9000/'
+        self.url = 'http://127.0.0.1:'+self.port+"/"
         self.session=""
-        self.process = ""
+        self.server_manipulator = serverManipulation()
 
-    def start_browser(self):
-        self.open_server("chrome")
+    def start_browser(self, browser = "chrome"):
+
+        self.server_manipulator.open_server(browser,self.port)
         self.session = self.create_session()
-        
+
     def navigate(self,url):
+        """
+        Navigates to a site
+        :param url: The url.
+        :return:
+        """
         try:
             my_json = {"url": url}
             navigation_url = self.url+"session/"+self.session+"/url"
@@ -29,6 +37,7 @@ class webDriver():
     def close_browser(self):
         close_url = self.url+"session/"+self.session+"/window"
         requests.request("DELETE", close_url)
+        self.server_manipulator.close_server()
 
     def max_browser(self):
         max_url = self.url+"session/"+self.session+"/window/maximize"
@@ -64,8 +73,8 @@ class webDriver():
         element_url = self.url + "session/" + self.session + "/element"
         my_json = {'using':location_type,'value':location_value}
         response = requests.request("POST", element_url, data=json.dumps(my_json).encode('utf-8'))
-        print(json.loads(response.text)['value'])
         return json.loads(response.text)['value']['ELEMENT']
+
 
     def write(self,element,text):
         """
@@ -87,20 +96,11 @@ class webDriver():
         write_url = self.url + "session/" + self.session + "/element/" + element + "/click"
         my_json = {'value': 'click'}
         response = requests.request("POST", write_url, data=json.dumps(my_json).encode('utf-8'))
-        print(response.text)
+
+
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
 
-    def open_server(self,server):
-        """
-        Opens the server in a subroprcess. Which server will open depends on the browser you want to use.
-        :param server: What kind of webdriver will be opened.
-        :return: the process.
-        :author: Pablo Soifer
-        """
-        if str.upper(server) == "CHROME":
-            #self.process = subprocess.Popen("chromedriver.exe --verbose --port=9000")
-            self.process = subprocess.Popen("chromedriver.exe --port=9000")
-            return self.process #TODO: See if this is needed in the future
+
 
     def create_session(self):
         capabilities = {
@@ -116,16 +116,11 @@ class webDriver():
 
             session_url = self.url+"session"
             response = requests.request("POST", session_url, data=json.dumps(capabilities).encode('utf8'))
-            #print("Response: "+response.text)
             return json.loads(response.text)['sessionId']
         except:
             self.end_session()
 
 
     def end_session(self):
-        #requests.request("DELETE",self.url+"/session"+self.session)
         requests.delete(self.url+"/session"+self.session)
 
-    def end_driver(self):
-        print("Finishing webdriver server...")
-        self.process.terminate()

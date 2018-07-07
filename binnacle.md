@@ -1,3 +1,13 @@
+08/05/2018
+
+Now the webdriver server subprocess has his own class and it does not depend on the web driver anymore.
+
+07/05/2018
+
+Added a capabilities dictionary. It will be used to add capabilities to the browser.
+
+Now you can use any port if it is possible, by default it will keep using port 9000.
+
 07/04/2018
 
 I had to change my Python version in my computer (upgraded to 3.7) because my old python changes the way I do imports.
