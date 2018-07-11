@@ -1,8 +1,14 @@
-08/05/2018
+07/10/2018
+
+Created a class to retreive special keys, added a semi colon special key to test it.
+
+Have to follow my project board and stop writing what comes from my mind...
+
+07/08/2018
 
 Now the webdriver server subprocess has his own class and it does not depend on the web driver anymore.
 
-07/05/2018
+07/07/2018
 
 Added a capabilities dictionary. It will be used to add capabilities to the browser.
 
