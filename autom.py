@@ -18,6 +18,7 @@ driver.click(submit_button)
 gotosite_link = driver.locate_element("xpath","//*[@id='goto_first_page']")
 driver.click(gotosite_link)
 combo = driver.locate_element("xpath","//*[@id='testSelect']")
+print(driver.get_element_text(combo))
 driver.click(combo)
 driver.write(combo,key.get_key('KEYDOWN')+key.get_key('RETURN'))
 

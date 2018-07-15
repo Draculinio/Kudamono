@@ -97,7 +97,15 @@ class webDriver():
         my_json = {'value': 'click'}
         response = requests.request("POST", write_url, data=json.dumps(my_json).encode('utf-8'))
 
-
+    def get_element_text(self,element):
+        """
+        Gets an element text
+        :param element: The element to get the text
+        :return:
+        """
+        text_url = self.url + "session/" + self.session + "/element/"+element+"/text"
+        response = requests.request("GET",text_url)
+        return json.loads(response.text)['value']
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
 
 
