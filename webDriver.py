@@ -112,14 +112,7 @@ class webDriver():
         return json.loads(response.text)['value']
     
     
-    #SELECTS... this is gonna be hard...
-
-    def select_by_text(self,element,text):
-        """
-        """
-        all_text = self.get_element_text(element).splitlines()
-        print(all_text)
-        print(all_text[0])
+    
 
 
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
