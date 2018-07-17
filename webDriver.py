@@ -15,6 +15,8 @@ class webDriver():
         self.session=""
         self.server_manipulator = serverManipulation()
 
+    #BROWSER MANIPULATION
+
     def start_browser(self, browser = "chrome"):
 
         self.server_manipulator.open_server(browser,self.port)
@@ -62,6 +64,8 @@ class webDriver():
         print("-----------------")
         return response.text
 
+    #ELEMENT MANIPULATION
+
     def locate_element(self,location_type,location_value):
         """
         Locates an element.
@@ -106,9 +110,19 @@ class webDriver():
         text_url = self.url + "session/" + self.session + "/element/"+element+"/text"
         response = requests.request("GET",text_url)
         return json.loads(response.text)['value']
+    
+    
+    #SELECTS... this is gonna be hard...
+
+    def select_by_text(self,element,text):
+        """
+        """
+        all_text = self.get_element_text(element).splitlines()
+        print(all_text)
+        print(all_text[0])
+
+
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
-
-
 
     def create_session(self):
         capabilities = {
