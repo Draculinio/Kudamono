@@ -1,8 +1,8 @@
 import json
 import requests
-from keyConstants import *
 
-from serverManipulation import serverManipulation
+
+from serverManipulation import *
 
 #from sessionData import sessionData
 
@@ -14,6 +14,8 @@ class webDriver():
         self.url = 'http://127.0.0.1:'+self.port+"/"
         self.session=""
         self.server_manipulator = serverManipulation()
+
+    #BROWSER MANIPULATION
 
     def start_browser(self, browser = "chrome"):
 
@@ -62,6 +64,8 @@ class webDriver():
         print("-----------------")
         return response.text
 
+    #ELEMENT MANIPULATION
+
     def locate_element(self,location_type,location_value):
         """
         Locates an element.
@@ -97,10 +101,21 @@ class webDriver():
         my_json = {'value': 'click'}
         response = requests.request("POST", write_url, data=json.dumps(my_json).encode('utf-8'))
 
+    def get_element_text(self,element):
+        """
+        Gets an element text
+        :param element: The element to get the text
+        :return:
+        """
+        text_url = self.url + "session/" + self.session + "/element/"+element+"/text"
+        response = requests.request("GET",text_url)
+        return json.loads(response.text)['value']
+    
+    
+    
+
 
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
-
-
 
     def create_session(self):
         capabilities = {
