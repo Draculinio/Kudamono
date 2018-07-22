@@ -2,6 +2,7 @@ from webDriver import webDriver
 import time
 import os
 from key import *
+from select import *
 
 key = Keys()
 driver = webDriver("Chrome",'8500')
@@ -19,9 +20,8 @@ gotosite_link = driver.locate_element("xpath","//*[@id='goto_first_page']")
 print(driver.get_element_text(gotosite_link))
 driver.click(gotosite_link)
 combo = driver.locate_element("xpath","//*[@id='testSelect']")
-driver.click(combo)
-driver.write(combo,key.get_key('KEYDOWN')+key.get_key('RETURN'))
-
+comboSelector = Select(combo,driver)
+comboSelector.select_by_text("Second Option")
 time.sleep(2)
 driver.get_status()
 driver.close_browser()

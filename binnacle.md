@@ -1,3 +1,7 @@
+07/22/2018
+
+Working on how select method works.
+
 07/10/2018
 
 Created a class to retreive special keys, added a semi colon special key to test it.

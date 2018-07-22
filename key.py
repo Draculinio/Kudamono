@@ -7,7 +7,9 @@ class Keys():
                            'KEYRIGHT': '\uE014',
                            'ENTER': '\uE007',
                            'RETURN': '\uE006',
-                           'SEMICOLON': '\uE018'
+                           'SEMICOLON': '\uE018',
+                           'HOME':'\uE011',
+                           'END':'\uE010'
                            }
 
 
