@@ -1,11 +1,11 @@
-from webDriver import webDriver
+from WebDriver import WebDriver
 import time
 import os
 from key import *
 from select import *
 
 key = Keys()
-driver = webDriver("Chrome",'8500')
+driver = WebDriver("Chrome", '8500')
 driver.start_browser()
 driver.navigate(os.getcwd()+"/Test_site/index.html")
 driver.max_browser()

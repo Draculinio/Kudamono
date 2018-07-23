@@ -1,6 +1,6 @@
 import subprocess
 
-class serverManipulation:
+class ServerManipulator:
 
     def __init__(self):
         self.process=""

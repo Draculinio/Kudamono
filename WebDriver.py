@@ -2,18 +2,18 @@ import json
 import requests
 
 
-from serverManipulation import *
+from serverManipulator import *
 
 #from sessionData import sessionData
 
-class webDriver():
+class WebDriver():
     def __init__(self,browser,port='9000'):
         self.port=port
         self.capabilites={}
         self.browser = browser
         self.url = 'http://127.0.0.1:'+self.port+"/"
         self.session=""
-        self.server_manipulator = serverManipulation()
+        self.server_manipulator = ServerManipulator()
 
     #BROWSER MANIPULATION
 
