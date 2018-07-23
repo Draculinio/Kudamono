@@ -1,8 +1,8 @@
-from WebDriver import WebDriver
-import time
 import os
-from key import *
-from select import *
+import time
+
+from KudamonoDriver.WebDriver import WebDriver
+from KudamonoDriver.select import *
 
 key = Keys()
 driver = WebDriver("Chrome", '8500')
