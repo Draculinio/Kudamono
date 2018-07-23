@@ -1,5 +1,5 @@
 from key import Keys
-from WebDriver import *
+
 
 class Select:
     def __init__(self,element,driver):
