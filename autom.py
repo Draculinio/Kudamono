@@ -3,6 +3,10 @@ import time
 
 from KudamonoDriver.WebDriver import WebDriver
 from KudamonoDriver.select import *
+from KudamonoDriver.desiredCapabilities import DesiredCapabilities
+
+desiredCaps = DesiredCapabilities()
+desiredCaps.add_capability('browserName','chrome')
 
 key = Keys()
 driver = WebDriver("Chrome", '8500')
@@ -27,3 +31,4 @@ comboSelector.select_by_index(2)
 time.sleep(2)
 driver.get_status()
 driver.close_browser()
+

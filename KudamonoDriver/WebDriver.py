@@ -15,6 +15,7 @@ class WebDriver():
         self.url = 'http://127.0.0.1:'+self.port+"/"
         self.session=""
         self.server_manipulator = ServerManipulator()
+        
 
     #BROWSER MANIPULATION
 
