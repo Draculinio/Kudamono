@@ -7,10 +7,12 @@ from KudamonoDriver.desiredCapabilities import DesiredCapabilities
 
 desiredCaps = DesiredCapabilities()
 desiredCaps.add_capability('browserName','chrome')
-
+desiredCaps.add_capability('platform','ANY')
+desiredCaps.add_chrome_options('binary','C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe')
+print(desiredCaps.desiredCapabilities)
 key = Keys()
 driver = WebDriver("Chrome", '8500')
-driver.start_browser()
+driver.start_browser(capabilities=desiredCaps.desiredCapabilities)
 driver.navigate(os.getcwd()+"/Test_site/index.html")
 driver.max_browser()
 driver.min_browser()

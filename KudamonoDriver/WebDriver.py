@@ -19,10 +19,10 @@ class WebDriver():
 
     #BROWSER MANIPULATION
 
-    def start_browser(self, browser = "chrome"):
+    def start_browser(self, browser = "chrome",capabilities={}):
 
         self.server_manipulator.open_server(browser,self.port)
-        self.session = self.create_session()
+        self.session = self.create_session(capabilities)
 
     def navigate(self,url):
         """
@@ -119,16 +119,17 @@ class WebDriver():
 
     #MAYBE METHODS BELOW SHOULD GO IN A SEPARATE CLASS?
 
-    def create_session(self):
-        capabilities = {
-            "desiredCapabilities": {
-                "browserName": "chrome",
-                "chromeOptions": {
-                    "binary": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
-                },
-                "platform": "ANY"
+    def create_session(self,capabilities):
+        if capabilities == {}:
+            capabilities = {
+                "desiredCapabilities": {
+                    "browserName": "chrome",
+                    "chromeOptions": {
+                        "binary": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+                    },
+                   "platform": "ANY"
+               }
             }
-        }
         try:
 
             session_url = self.url+"session"

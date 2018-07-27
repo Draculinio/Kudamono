@@ -4,3 +4,8 @@ class DesiredCapabilities:
     def add_capability(self,key,value):
         self.desiredCapabilities['desiredCapabilities'][key]=value
         print(self.desiredCapabilities)
+    def add_chrome_options(self,key,value):
+        if not 'chromeOptions' in self.desiredCapabilities:
+            self.desiredCapabilities['desiredCapabilities']['chromeOptions']={}
+        self.desiredCapabilities['desiredCapabilities']['chromeOptions'][key]=value
+            
