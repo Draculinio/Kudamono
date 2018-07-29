@@ -1,10 +1,6 @@
 import json
-
 import requests
-
 from KudamonoDriver.serverManipulator import *
-
-
 #from sessionData import sessionData
 
 class WebDriver():
@@ -38,6 +34,7 @@ class WebDriver():
             print("Something went wrong on navigation")
             self.end_session(self.session)
 
+    #-----------------BROWSER SIZE---------------------
     def close_browser(self):
         close_url = self.url+"session/"+self.session+"/window"
         requests.request("DELETE", close_url)
@@ -58,6 +55,11 @@ class WebDriver():
         my_json = {'value': 'fullscreen'}
         response = requests.request("POST", fs_url, data=json.dumps(my_json).encode('utf-8'))
 
+    def set_browser_size(self,height,width):
+        browser_size_url = self.url+"session/"+self.session+"/window/rect"
+        my_json = {'width': width,'height': height}
+        response = requests.request("POST", browser_size_url, data=json.dumps(my_json).encode('utf-8'))
+    #----------------END OF BROWSER SIZES--------------------------------------------------
     def get_status(self):
         status_url = self.url + "status"
         response = requests.get(status_url)
