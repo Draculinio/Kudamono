@@ -3,7 +3,7 @@ import json
 import requests
 
 from KudamonoDriver.serverManipulator import *
-
+from KudamonoRequests.requests import *
 
 #from sessionData import sessionData
 
@@ -15,6 +15,7 @@ class WebDriver():
         self.url = 'http://127.0.0.1:'+self.port+"/"
         self.session=""
         self.server_manipulator = ServerManipulator()
+        self.requester = Requests()
         
 
     #BROWSER MANIPULATION
@@ -30,10 +31,13 @@ class WebDriver():
         :param url: The url.
         :return:
         """
+
         try:
-            my_json = {"url": url}
-            navigation_url = self.url+"session/"+self.session+"/url"
-            response = requests.request("POST", navigation_url, data=json.dumps(my_json).encode('utf8'))
+            #my_json = {"url": url}
+            #navigation_url = self.url+"session/"+self.session+"/url"
+            #response = requests.request("POST", navigation_url, data=json.dumps(my_json).encode('utf8'))
+            response = self.requester.post(self.url+"session/"+self.session+"/url",{"url": url})
+
         except:
             print("Something went wrong on navigation")
             self.end_session(self.session)
