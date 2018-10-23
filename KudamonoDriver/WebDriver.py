@@ -1,11 +1,8 @@
 import json
 import requests
 from KudamonoDriver.serverManipulator import *
-<<<<<<< HEAD
-from KudamonoRequests.requests import *
+from KudamonoRequests.k_requester import *
 
-=======
->>>>>>> 90dedd6e75751ace36a5537d9aa73a1155e040e2
 #from sessionData import sessionData
 
 class WebDriver():
@@ -16,7 +13,7 @@ class WebDriver():
         self.url = 'http://127.0.0.1:'+self.port+"/"
         self.session=""
         self.server_manipulator = ServerManipulator()
-        self.requester = Requests()
+        self.requester = k_requests()
         
 
     #BROWSER MANIPULATION
@@ -32,19 +29,18 @@ class WebDriver():
         :param url: The url.
         :return:
         """
-
         try:
             response = self.requester.post(self.url+"session/"+self.session+"/url",{"url": url})
-
         except:
             print("Something went wrong on navigation")
             self.end_session(self.session)
 
     #-----------------BROWSER SIZE---------------------
     def close_browser(self):
-        close_url = self.url+"session/"+self.session+"/window"
-        requests.request("DELETE", close_url)
-        self.server_manipulator.close_server()
+        #close_url = self.url+"session/"+self.session+"/window"
+        self.requester.delete(self.url+"session/"+self.session+"/window")
+        #requests.request("DELETE", close_url)
+        #self.server_manipulator.close_server()
 
     def max_browser(self):
         max_url = self.url+"session/"+self.session+"/window/maximize"
@@ -117,9 +113,10 @@ class WebDriver():
         :param element: The element to get the text
         :return:
         """
-        text_url = self.url + "session/" + self.session + "/element/"+element+"/text"
-        response = requests.request("GET",text_url)
-        return json.loads(response.text)['value']
+        #text_url = self.url + "session/" + self.session + "/element/"+element+"/text"
+        #response = requests.request("GET",text_url)
+        #return json.loads(response.text)['value']
+        return json.loads(self.requester.get(self.url + "session/" + self.session + "/element/"+element+"/text").text)['value']
     
     
     

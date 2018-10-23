@@ -5,6 +5,8 @@ from KudamonoDriver.WebDriver import WebDriver
 from KudamonoDriver.select import *
 from KudamonoDriver.desiredCapabilities import DesiredCapabilities
 
+from KudamonoRequests.k_requester import *
+
 desiredCaps = DesiredCapabilities()
 desiredCaps.add_capability('browserName','chrome')
 desiredCaps.add_capability('platform','ANY')
@@ -35,4 +37,9 @@ comboSelector.select_by_index(2)
 time.sleep(2)
 driver.get_status()
 driver.close_browser()
+
+#API TESTING
+requests = k_requests()
+requests.get('https://jsonplaceholder.typicode.com/posts')
+
 
