@@ -37,15 +37,13 @@ class WebDriver():
 
     #-----------------BROWSER SIZE---------------------
     def close_browser(self):
-        #close_url = self.url+"session/"+self.session+"/window"
         self.requester.delete(self.url+"session/"+self.session+"/window")
-        #requests.request("DELETE", close_url)
-        #self.server_manipulator.close_server()
 
     def max_browser(self):
         max_url = self.url+"session/"+self.session+"/window/maximize"
         my_json = {'value':'maximize'}
-        response = requests.request("POST",max_url,data=json.dumps(my_json).encode('utf-8'))
+        self.requester.post(max_url,my_json)
+        #response = requests.request("POST",max_url,data=json.dumps(my_json).encode('utf-8'))
 
     def min_browser(self):
         min_url = self.url + "session/" + self.session + "/window/minimize"

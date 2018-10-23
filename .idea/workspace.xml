@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2e8a552-eb84-4251-bf8a-b878ea5ca189" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/KudamonoRequests/requests.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Kudamono.iml" afterPath="$PROJECT_DIR$/.idea/Kudamono.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/KudamonoDriver/API/requester.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KudamonoDriver/WebDriver.py" afterPath="$PROJECT_DIR$/KudamonoDriver/WebDriver.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/autom.py" afterPath="$PROJECT_DIR$/autom.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,11 +16,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="autom.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="autom.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/autom.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -31,14 +28,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebDriver.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WebDriver.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/KudamonoDriver/WebDriver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+            <state relative-caret-position="492">
+              <caret line="44" column="43" lean-forward="false" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1540262459517" expanded="true" signature="5092:5100" ph="..." />
+                <marker date="1540303781614" expanded="true" signature="4979:4987" ph="..." />
               </folding>
             </state>
           </provider>
@@ -47,8 +44,8 @@
       <file leaf-file-name="k_requester.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/KudamonoRequests/k_requester.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -123,9 +120,9 @@
         <option value="$PROJECT_DIR$/webDriver.py" />
         <option value="$PROJECT_DIR$/SessionData.py" />
         <option value="$PROJECT_DIR$/WebDriver.py" />
-        <option value="$PROJECT_DIR$/KudamonoDriver/WebDriver.py" />
         <option value="$PROJECT_DIR$/KudamonoRequests/k_requester.py" />
         <option value="$PROJECT_DIR$/autom.py" />
+        <option value="$PROJECT_DIR$/KudamonoDriver/WebDriver.py" />
       </list>
     </option>
   </component>
@@ -150,8 +147,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -175,6 +172,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="KudamonoRequests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Kudamono" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Kudamono" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KudamonoDriver" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -311,14 +322,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39561272" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40166414" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -341,23 +351,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/autom.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/KudamonoDriver/WebDriver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1540262459517" expanded="true" signature="5092:5100" ph="..." />
+            <marker date="1540303781614" expanded="true" signature="4979:4987" ph="..." />
           </folding>
         </state>
       </provider>
@@ -404,7 +404,7 @@
           <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1540262459517" expanded="true" signature="5092:5100" ph="..." />
+            <marker date="1540303781614" expanded="true" signature="4979:4987" ph="..." />
           </folding>
         </state>
       </provider>
@@ -459,7 +459,7 @@
           <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1540262459517" expanded="true" signature="5092:5100" ph="..." />
+            <marker date="1540303781614" expanded="true" signature="4979:4987" ph="..." />
           </folding>
         </state>
       </provider>
@@ -489,7 +489,7 @@
           <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1540262459517" expanded="true" signature="5092:5100" ph="..." />
+            <marker date="1540303781614" expanded="true" signature="4979:4987" ph="..." />
           </folding>
         </state>
       </provider>
@@ -550,7 +550,7 @@
           <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1540262459517" expanded="true" signature="5092:5100" ph="..." />
+            <marker date="1540303781614" expanded="true" signature="4979:4987" ph="..." />
           </folding>
         </state>
       </provider>
@@ -603,7 +603,7 @@
           <caret line="90" column="55" lean-forward="true" selection-start-line="90" selection-start-column="55" selection-end-line="90" selection-end-column="55" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1540262459517" expanded="true" signature="5092:5100" ph="..." />
+            <marker date="1540303781614" expanded="true" signature="4979:4987" ph="..." />
           </folding>
         </state>
       </provider>
@@ -633,7 +633,7 @@
           <caret line="56" column="73" lean-forward="true" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="73" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1540262459517" expanded="true" signature="5092:5100" ph="..." />
+            <marker date="1540303781614" expanded="true" signature="4979:4987" ph="..." />
           </folding>
         </state>
       </provider>
@@ -654,7 +654,7 @@
           <caret line="41" column="41" lean-forward="true" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1540262459517" expanded="true" signature="5092:5100" ph="..." />
+            <marker date="1540303781614" expanded="true" signature="4979:4987" ph="..." />
           </folding>
         </state>
       </provider>
@@ -731,10 +731,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/autom.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KudamonoDriver/API/requester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/KudamonoRequests/k_requester.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -743,21 +761,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/KudamonoDriver/WebDriver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        <state relative-caret-position="492">
+          <caret line="44" column="43" lean-forward="false" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1540262459517" expanded="true" signature="5092:5100" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/autom.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1540303781614" expanded="true" signature="4979:4987" ph="..." />
           </folding>
         </state>
       </provider>
